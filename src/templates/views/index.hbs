@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arimo:wght@500&family=Baloo+Bhai+2:wght@700&family=Bebas+Neue&family=Josefin+Sans:ital,wght@1,200&family=League+Spartan:wght@700&family=Lobster&family=Poppins:wght@300&family=Rubik:wght@300&family=Ubuntu:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Banking System</title>
+</head>
+
+<body>
+    {{>navbar}}
+
+    <div class="subcontainer_1">
+        <div class="image">
+            <img src="../media/logo/pngwing.com (2).png" alt="" class="" id="Image1">
+            <img src="../media/logo/pngwing.com (1).png" alt="" class="" id="Image2">
+        </div>
+        <div class="buttons_container">
+            <h2 class="heading">Welcome</h2>
+            <a href="/register"><button class="default_button">Register</button></a>
+            <a href="/viewall"><button class="default_button">View all customers</button></a>
+            <!-- <a href="#"><button class="default_button">view all customers</button></a> -->
+        </div>
+    </div>
+
+    {{>footer}}
+
+    <script>
+
+        const observer = new IntersectionObserver((entries) => {
+            // Loop over the entries
+            entries.forEach((entry) => {
+                // If the element is visible
+                if (entry.isIntersecting) {
+                    // Add the animation class
+                    entry.target.classList.add("keypointanimation");
+                }
+            });
+        });
+        observer.observe(document.getElementById('Image1'));
+        observer.observe(document.getElementById('Image2'));
+
+        const img1 = document.getElementById('Image1');
+        const img2 = document.getElementById('Image2');
+
+        function r(width) {
+            if(innerWidth>1083){
+            setTimeout(() => {
+                var stoper;
+                if (img1.style.display != "none") {
+                    img1.style.display = "none";
+                    img2.style.display = "block";
+                    r();
+                } else {
+                    img1.style.display = "block";
+                    img2.style.display = "none";
+                    r();
+                }
+            }, 3000);
+            }
+        }
+        r(innerWidth);
+    </script>
+</body>
+
+</html>

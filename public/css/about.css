@@ -1,0 +1,366 @@
+*{
+    padding: 0;
+    margin: 0;
+    transition: background 0.2s;
+}
+
+body{
+    background-color: aliceblue;
+    /* background-color:#2c2c2c; */
+}
+
+/* navbar css */
+.supercontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    /* padding: 5px; */
+    /* background: #dfdfdf; */
+    background-color: #1d1f3c;
+}
+
+.navitems{
+    display: flex;
+    flex-direction: row;
+}
+.li_items{
+    list-style: none;
+    padding: 15px;   
+}
+
+.items{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    
+    font-size: 1em;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.li_items:hover{
+    /* transform: scale(1.1); */
+    height: 100%;
+    background: #ffffff;
+    /* border-radius: 15px; */
+    
+}
+.li_items:hover .items{
+    color: black;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.logotext{
+    font-size: 1.6em;
+    display: inline-block;
+    padding: 7px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+    color: #ffffff;
+    transform: skewX(-15deg);    
+
+    
+}
+.logo img{
+    height:32px;
+    /* padding: 15px; */
+    opacity: 1;
+    filter: invert(1);
+}
+
+
+
+/* container css */
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 60%;
+    margin: 50px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 35px rgb(128 128 128 / 13%);
+    padding: 30px;
+}
+.profile img{
+    width: 200px;
+    border-radius: 100%;
+    border: 8px solid #f0f8ff;
+}
+
+.heading{
+    font-family: 'Baloo bhai 2';
+    font-size: 1.7em;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #1d1f3c;
+    color: #1d1f3c;
+}
+
+.name{
+    text-align: center;
+    font-size: 1.3em;
+    font-family: 'poppins';
+    padding: 30px;
+    font-weight: bold;
+    color: #1d1f3c;
+}
+
+.center{
+    text-align: center;
+}
+
+.para{
+    display: flex;
+    width: 87%;
+    font-family: poppins;
+    flex-direction: column;
+}
+
+
+/* footer css */
+
+.footercontainer{
+    background-color: #16172d;
+    position: relative;
+    width: 100%;
+    bottom: 0px
+}
+
+.footercontainer .li_items:hover .foot_items{
+    color: rgb(51, 51, 51);
+}
+
+.footercontainer .li_items:hover{
+    transform: scale(1);
+    color: #2c2c2c;
+    background-color: white;
+    /* transform: skewX(-15deg); */
+}
+
+.footercontainer .center{
+    display: flex;
+    justify-content: center;
+}
+.underline{
+    border-bottom: 1px solid rgb(0, 153, 255);
+    border-top: 1px solid rgb(0, 153, 255);
+    width: 200px;
+    margin: 5px auto;
+}
+.footnav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.icon-set{
+    padding: 0.7em;
+    width: 30px;
+}
+.icon-set:hover{
+    background-color: rgba(255, 255, 255, 0.874);
+    border-radius: 5px;
+}
+
+.foot_items{
+    text-decoration: none;
+    color: rgb(204, 204, 204);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.8em;
+}
+
+.copyright{
+    padding: 10px;
+    font-size: 0.8em;
+}
+
+/* .foot{
+    justify-content:left;
+    margin-left: 60px;
+} */
+
+.foot img{
+    opacity: 0.6;
+    filter: invert(0);
+}
+.foot div{
+    color: #686868;
+}
+
+/* responsive css */
+@media only screen and (max-width: 1083px) {
+    .subcontainer_1 {
+        flex-direction: column;
+        height: 556px;
+        padding: 70px 0px;
+        justify-content: center;
+    }
+
+    .image img {
+        width: 387px;
+        position: relative;
+        z-index: -1;
+        margin-bottom: 30px;
+    }
+
+    .footercontainer {
+        position: none;
+        bottom: 0px;
+    }
+}
+
+@media only screen and (max-width:620px) {
+    .navbar {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .default_button {
+        width: 353px;
+    }
+}
+
+@media only screen and (max-width:470px) {
+    .li_items {
+        padding: 13px;
+    }
+}
+
+@media only screen and (max-width:436px) {
+    .items {
+        font-size: 0.9em;
+    }
+
+    .default_button {
+        width: 323px;
+        height: 49px;
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and (max-width:418px) {
+    .image img{
+        width: 356px;
+    }
+    .default_button{
+        width: 318px;
+        height: 46px;
+        font-size: 1.048em;
+    }
+}
+
+@media only screen and (max-width: 407px){
+    .items{
+        font-size: 0.8em;
+    }
+    .default_button{
+        width: 300px;
+        height: 42px;
+        font-size: 1em;
+    }
+    .foot_items{
+        font-size: 0.78em;
+    }
+}
+@media only screen and (max-width: 380px){
+    .subcontainer_1{
+        padding: 50px 0px;
+    }
+    .li_items{
+        padding: 11px;
+    }
+    .image img{
+        width: 330px;
+    }
+    .default_button{
+        width: 280px;
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width:360px){
+    .li_items{
+        padding: 10px;
+    }
+    .default_button{
+        width: 260px;
+    }
+    .footercontainer{
+        padding: 10px 0px;
+    }
+}
+
+@media only screen and (max-width: 350px){
+    .li_items{
+        padding: 9px;
+    }
+    .default_button{
+        width: 250px;
+    }
+    .image img{
+        width: 300px;
+    }
+    .foot_items{
+        font-size: 0.7em;
+    }
+}
+
+@media only screen and (max-width:814px){
+    .container{
+        width: 80%;
+    }
+}
+@media only screen and (max-width:564px){
+    .container{
+        width: 90%;
+        margin: 20px;
+    }
+    .para{
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width:450px){
+    .container{
+        padding: 5px;
+    }
+    .profile img{
+        width: 184px;
+    }
+}
+
+@media only screen and (max-width: 364px){
+    .container{
+        width: 95%;
+        margin: 10px;
+        padding: 5px;
+    }
+    .profile img{
+        width: 170px;
+    }
+    .para{
+        font-size: 0.8em;
+    }
+    .heading{
+        font-size: 1.5em;
+    }
+    .name{
+        font-size: 1.1em;
+    }
+}
