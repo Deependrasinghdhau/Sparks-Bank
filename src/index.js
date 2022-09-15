@@ -107,6 +107,8 @@ app.get("/viewall", async (req, res) => {
     }
 })
 
+const sendtemplate2 = fs.readFileSync('./src/templates/views/sendmoney2.hbs');
+
 //Money sending request or logic
 app.post("/sendmoney", async (req, res) => {
   try {
@@ -136,13 +138,31 @@ app.post("/sendmoney", async (req, res) => {
       // console.log(result2);
     } else {
       if (sender[0].currentbalance < user.amount) {
-        res.send("Insufficient Balance!");
+        res.render('./sendmoney2', {
+          tempstatus: "Transaction Failed",
+          color: "red",
+          temperror: "Insufficient Balance!",
+          tempdisplay: "block"
+        })
+        // res.send("Insufficient Balance!");
       }
       else if (receiver.length == 0) {
-        res.send("Receiver does not exist");
+        res.render('./sendmoney2', {
+          tempstatus: "Transaction Failed",
+          color: "red",
+          temperror: "Receiver does not exist!",
+          tempdisplay: "block"
+        })
+        // res.send("Receiver does not exist");
       }
       else if (user.sender == user.receiver) { 
-        res.send("Sender and Receiver account no. can not be same!");
+        res.render('./sendmoney2', {
+          tempstatus: "Transaction Failed",
+          color: "red",
+          temperror: "Sender and Receiver account no. can not be same!",
+          tempdisplay: "block"
+        })
+        // res.send("Sender and Receiver account no. can not be same!");
       }
       error = 1;
       user.status = "Failed";
@@ -150,7 +170,12 @@ app.post("/sendmoney", async (req, res) => {
     const createUser = await user.save();
     // console.log(user);
     if (error == 0) {
-      res.status(201).redirect('/transactions');
+      
+      res.status(201).render('./sendmoney2', {
+        tempstatus: "Transaction Successful.",
+        color: "green",
+        tempdisplay: "none"
+      });
 
     }
   } catch (e) {

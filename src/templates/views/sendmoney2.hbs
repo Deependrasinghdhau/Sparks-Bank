@@ -15,9 +15,13 @@
 <body>
     {{>navbar}}
     <div class="subcontainer">
+        <h2 class="font" style="color: {{color}};background-color: white; border-radius:5px;padding:5px;"
+            id="status-display">{{tempstatus}}</h2>
+        <h2 class="font"
+            style="color: {{color}};background-color: white; border-radius:5px;padding:5px;font-size:1em;display:{{tempdisplay}};margin:5px;"
+            id="status-display">{{temperror}}</h2>
         <form action="/sendmoney" method="post" class="formcontainer" onsubmit="process(event)">
             <h2 class="font border-set">Transfer Money</h2>
-            <h2 class="font" style="color: green;" id="status-display"></h2>
             <li class="list-container">
                 <label for="sender">Sender's Account no: </label><br>
                 <input type="number" name="sender" value="{{accountno}}" class="input-container" id="sender">
@@ -48,8 +52,6 @@
 
         const amount = document.getElementById('amount');
         const amounterror = document.getElementById('amounterror');
-
-        const myRequest = new Request('products.json');
 
 
 
