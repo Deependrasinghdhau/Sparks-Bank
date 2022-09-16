@@ -18,7 +18,7 @@ const mongodb = require("mongodb");
 // global database
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const DB =
-  "mongodb+srv://deependra:dhauji@cluster0.h3uln.mongodb.net/BankSystem?retryWrites=true&w=majority";
+  "";
 const client = new MongoClient(DB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
