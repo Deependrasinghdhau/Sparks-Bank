@@ -18,7 +18,7 @@ const mongodb = require("mongodb");
 // global database
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const DB =
-  "";
+  process.env.MONGODB_URL;
 const client = new MongoClient(DB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
