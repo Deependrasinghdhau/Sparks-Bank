@@ -91,6 +91,7 @@ app.get("/viewall", async (req, res) => {
         // console.log(data[0].name);
 
         const avval = data.map(val => replaceVal(template,val)).join("");
+      res.writeHead(200,{'Content-Type': 'text/html'});
         res.write(page);
         res.write(avval);
         res.write(footer);
