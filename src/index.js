@@ -203,7 +203,7 @@ app.get('/transactions', async (req, res) => {
   try {
     const data = await transaction.find().sort({_id:-1});
     const avval = data.map(val => replaceValtrans(transactionTemplate, val)).join("");
-
+    res.writeHead(200,{'Content-Type': 'text/html'});
     res.write(transactionPage);
     res.write(avval);
     res.write(footer);
